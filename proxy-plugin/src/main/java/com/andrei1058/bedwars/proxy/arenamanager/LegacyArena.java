@@ -235,7 +235,7 @@ public class LegacyArena implements CachedArena {
                         addPlayer(pl, player.getName());
                     }
                 }
-                getParty().disband(player.getUniqueId());
+                Bukkit.getScheduler().runTaskLater(BedWarsProxy.getPlugin(), () -> getParty().disband(player.getUniqueId()), 100);
             }
         }
 
